@@ -1,0 +1,20 @@
+.reviews {
+    padding: 20px 0;
+  }
+  
+  .reviews ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .reviews li {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  
+  .reviews h4 {
+    margin: 0 0 10px 0;
+    color: #444;
+  }
+  
