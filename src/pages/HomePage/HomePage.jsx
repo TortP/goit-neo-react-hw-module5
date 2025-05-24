@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import MovieList from '../../MovieList/MovieList';
+import MovieList from '../../components/MovieList/MovieList';
 import styles from './HomePage.module.css';
-import { getTrendingMovies } from '../../../services/api';
-import LoaderModal from '../../LoaderModal/LoaderModal';
+import { getTrendingMovies } from '../../services/api';
+import LoaderModal from '../../components/LoaderModal/LoaderModal';
 
 
 const HomePage = () => {

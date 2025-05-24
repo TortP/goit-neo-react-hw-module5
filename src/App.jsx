@@ -5,10 +5,10 @@ import LoaderModal from './components/LoaderModal/LoaderModal';
 import './App.css';
 
 
-const HomePage = lazy(() => import('./components/pages/HomePage/HomePage'));
-const MoviesPage = lazy(() => import('./components/pages/MoviesPage/MoviesPage'));
-const MovieDetailsPage = lazy(() => import('./components/pages/MovieDetailsPage/MovieDetailsPage'));
-const NotFoundPage = lazy(() => import('./components/pages/NotFoundPage/NotFoundPage'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
+const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage/MovieDetailsPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 const MovieCast = lazy(() => import('./components/MovieCast/MovieCast'));
 const MovieReviews = lazy(() => import('./components/MovieReviews/MovieReviews'));
 
