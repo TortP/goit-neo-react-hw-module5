@@ -3,6 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import MovieList from '../../MovieList/MovieList';
 import styles from './MoviesPage.module.css';
 import { searchMovies } from '../../../services/api';
+import LoaderModal from '../../LoaderModal/LoaderModal';
+
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -48,7 +50,7 @@ const MoviesPage = () => {
         />
         <button type="submit" className={styles.button}>Search</button>
       </form>
-      {loading && <p>Loading...</p>}
+      {loading && <LoaderModal />}
       {error && <p>Error: {error}</p>}
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>

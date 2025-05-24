@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './MovieCast.module.css';
 import { getMovieCast } from '../../services/api';
+import LoaderModal from '../LoaderModal/LoaderModal';
+
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -29,7 +31,7 @@ const MovieCast = () => {
 
   return (
     <div className={styles.cast}>
-      {loading && <p>Loading cast...</p>}
+      {loading && <LoaderModal />}
       {error && <p>Error: {error}</p>}
       {filteredCast.length > 0 ? (
         <ul className={styles['cast-list']}>

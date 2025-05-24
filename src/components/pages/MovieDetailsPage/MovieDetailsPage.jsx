@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import styles from './MovieDetailsPage.module.css';
 import { getMovieDetails } from '../../../services/api';
+import LoaderModal from '../../LoaderModal/LoaderModal';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -31,7 +32,7 @@ const MovieDetailsPage = () => {
   return (
     <div className={styles.container}>
       <Link to={backLinkRef.current} className={styles.backLink}>← Go back</Link>
-      {loading && <p>Loading...</p>}
+      {loading && <LoaderModal />}
       {error && <p>Error: {error}</p>}
       {movie && (
         <div className={styles.details}>

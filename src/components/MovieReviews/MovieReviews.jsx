@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './MovieReviews.module.css';
 import { getMovieReviews } from '../../services/api';
+import LoaderModal from '../LoaderModal/LoaderModal';
+
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -27,7 +29,7 @@ const MovieReviews = () => {
 
   return (
     <div className={styles.reviews}>
-      {loading && <p>Loading reviews...</p>}
+      {loading && <LoaderModal />}
       {error && <p>Error: {error}</p>}
       {reviews.length > 0 ? (
         <ul>
