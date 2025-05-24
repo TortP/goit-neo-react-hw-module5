@@ -5,7 +5,6 @@ import styles from './MoviesPage.module.css';
 import { searchMovies } from '../../../services/api';
 import LoaderModal from '../../LoaderModal/LoaderModal';
 
-
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -31,7 +30,7 @@ const MoviesPage = () => {
     fetchMovies();
   }, [query]);
 
-  const handleSubmit = evt => {
+  const handleSubmit = (evt) => {
     evt.preventDefault();
     const form = evt.target;
     const value = form.elements.query.value.trim();
@@ -48,10 +47,17 @@ const MoviesPage = () => {
           placeholder="Search movies..."
           className={styles.input}
         />
-        <button type="submit" className={styles.button}>Search</button>
+        <button type="submit" className={styles.button}>
+          Search
+        </button>
       </form>
       {loading && <LoaderModal />}
       {error && <p>Error: {error}</p>}
+      {!loading && query && movies.length === 0 && (
+        <p className={styles.message}>
+          Sorry, no results found for your query. Please try again.
+        </p>
+      )}
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
